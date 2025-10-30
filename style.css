@@ -1,0 +1,467 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f4f4f9;
+  color: #333;
+  overflow-x: hidden;
+}
+/* Make full-page section */
+/* Fullscreen background image */
+.home-section {
+  height: 100vh;
+  width: 100%;
+  background: url("yourphoto.jpg") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;  /* Move content horizontally to right */
+  align-items: flex-end;      /* Move content vertically to bottom */
+  padding: 50px;              /* Space from edges */
+}
+
+/* Text styling */
+.home-text {
+  color: white;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.4); /* Optional semi-transparent background */
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.home-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.home-text p {
+  font-size: 1rem;
+}
+
+/* Add dark overlay to make text visible */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* dark transparent layer */
+}
+
+/* Text styling */
+.home-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  max-width: 80%;
+}
+
+.home-content h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+.home-content span {
+  color: #00aaff;
+}
+
+.home-content p {
+  font-size: 1.2em;
+  margin-top: 12px;
+  color: #f1f1f1;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -220px;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  padding-top: 40px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  color: #00c6ff;
+}
+/* Style only the Home button */
+.sidebar a.home-btn {
+  display: block;
+  color: white;
+  text-decoration: none;
+  background-color: #0078d4; /* Blue background */
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.sidebar a.home-btn:hover {
+  background-color: #00aaff; /* Lighter blue on hover */
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  padding: 15px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #0078ff;
+  color: white;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* Main Content */
+.content {
+  margin-left: 0;
+  margin-bottom: 0;
+  transition: margin-left 0.3s;
+}
+
+.sidebar.active ~ .content {
+  margin-left: 200px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 300px 180px;
+  background: linear-gradient(to right, #00b3ff, #00c6ff);
+  color: white;
+}
+
+.hero img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+}
+
+/* Sections */
+section {
+  width: 100%;
+  max-height: 1200px;
+  margin: 0;
+  box-sizing: border-box;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+
+/* Make the section fill full screen */
+#about {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontally center */
+  align-items: center;       /* vertically center */
+  background: linear-gradient(to right, #c9eaf3, #f7f9fb);
+}
+
+/* The vertical rectangular box */
+.about-box {
+  width: 40%;                /* makes it vertical and not too wide */
+  height: 80%;               /* makes it tall */
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading */
+.about-box h2 {
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Paragraph text */
+.about-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .about-box {
+    width: 85%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .about-box p {
+    font-size: 1rem;
+  }
+}
+
+/* Full-screen layout */
+#skills {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e6f2ff; /* Light blue background */
+  box-sizing: border-box;
+}
+
+/* Skills Box */
+.skills-box {
+  width: 70%;
+  max-height: 85%;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+/* Heading */
+.skills-box h2 {
+  text-align: center;
+  color: #007acc;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* Each skill block */
+.skill {
+  background: #f7faff;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #007acc;
+  border-radius: 6px;
+}
+
+.skill p {
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Scrollbar styling */
+.skills-box::-webkit-scrollbar {
+  width: 6px;
+}
+.skills-box::-webkit-scrollbar-thumb {
+  background-color: #007acc;
+  border-radius: 3px;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  #skills {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .skills-box {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .skills-box h2 {
+    font-size: 1.6rem;
+  }
+
+  .skill p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .skills-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .skill p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Full screen layout for Projects */
+#projects {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+/* Container box */
+.projects-box {
+  width: 70%;
+  height: 80%;
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.projects-box h2 {
+  color: #007acc;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Each project starts on new line with spacing */
+.project {
+  margin-bottom: 40px;
+}
+
+/* Project Title */
+.project h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Project Description */
+.project p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: justify;
+}
+section h2 {
+  color: #0078ff;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+a {
+  color: #0078ff;
+}
+#contact {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fc;
+  border-top: 2px solid #ccc;
+  padding: 40px 0;
+}
+
+.contact-box {
+  width: 60%;
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.contact-box h2 {
+  color: #007acc;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-box p {
+  color: #333;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.contact-box a {
+  color: #0078ff;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #projects,
+  #contact {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .projects-box,
+  .contact-box {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .project h3 {
+    font-size: 1.1rem;
+  }
+
+  .project p,
+  .contact-box p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+  margin-top: 50px;
+}
